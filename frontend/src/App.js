@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import { Analytics } from "@vercel/analytics/react";
 
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
@@ -29,6 +30,7 @@ function App() {
         <Footer />
         <FloatingWhatsApp />
       </BrowserRouter>
+      <Analytics />
     </div>
   );
 }
