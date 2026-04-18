@@ -1,34 +1,26 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #FDFBF7;
+  color: #2C1E16;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.App-link {
-    color: #61dafb;
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.menu-item-dots {
+  flex: 1;
+  border-bottom: 2px dotted #E8E1D9;
+  margin: 0 12px;
+  min-width: 20px;
 }
