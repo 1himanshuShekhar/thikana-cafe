@@ -1,6 +1,14 @@
 import { ArrowRight } from 'lucide-react';
+import useSEO from '@/hooks/useSEO';
 
 const Gallery = () => {
+  useSEO({
+    title: 'Gallery — Café Ambiance & Kulhad Chai Photos | Thikana Café Phagwara',
+    description: 'Take a visual tour of Thikana Café in Phagwara. Cozy café ambiance, kulhad chai photos, fresh coffee shots, and Indian snacks from Punjab\'s favourite kulhad chai café.',
+    keywords: 'Thikana Café gallery, kulhad chai photos, café ambiance Phagwara, café interior Punjab, Indian café pictures, chai café photos Phagwara',
+    canonical: 'https://thikanacafe.com/gallery',
+  });
+
   const images = [
     { url: 'https://images.pexels.com/photos/5814950/pexels-photo-5814950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt: 'Traditional kulhad chai', span: 'md:col-span-2 md:row-span-2 h-[600px]' },
     { url: 'https://images.pexels.com/photos/15945660/pexels-photo-15945660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt: 'Cozy café interior', span: 'md:col-span-1 md:row-span-1 h-[290px]' },
@@ -20,7 +28,7 @@ const Gallery = () => {
             Our <span className="italic text-[#B48256]">Gallery</span>
           </h1>
           <p className="animate-fade-in-up animate-delay-200 text-lg text-[#8A796F] leading-relaxed max-w-2xl mx-auto">
-            A visual journey through our café — the kulhads, the ambiance, and the memories we create.
+            A visual journey through <strong className="font-medium text-[#3D332D]">Thikana Café in Phagwara</strong> — the traditional kulhads, warm ambiance, fresh coffee, and the memories we create together.
           </p>
         </div>
       </section>

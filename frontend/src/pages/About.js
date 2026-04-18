@@ -1,7 +1,15 @@
 import { Heart, Award, Users, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import useSEO from '@/hooks/useSEO';
 
 const About = () => {
+  useSEO({
+    title: 'About Thikana Café — Kulhad Chai Culture in Phagwara, Punjab',
+    description: 'Learn the story of Thikana Café, Phagwara\'s favourite kulhad chai café. Discover our passion for traditional kulhad culture, eco-friendly serving, and authentic Punjabi chai.',
+    keywords: 'about Thikana Café, kulhad culture Phagwara, traditional chai café Punjab, eco-friendly café, Punjabi chai story, desi café Phagwara, kulhad history',
+    canonical: 'https://thikanacafe.com/about',
+  });
+
   const values = [
     { icon: Heart, title: 'Passion', description: 'We pour love into every cup we serve' },
     { icon: Award, title: 'Quality', description: 'Only the finest ingredients make it to your cup' },
@@ -26,7 +34,7 @@ const About = () => {
             Our <span className="italic text-[#B48256]">Story</span>
           </h1>
           <p className="animate-fade-in-up animate-delay-200 text-lg text-[#8A796F] leading-relaxed max-w-2xl mx-auto">
-            Born from a dream to bring back the authentic taste of tradition — one kulhad at a time.
+            Born from a dream to bring back the authentic <strong className="font-medium text-[#3D332D]">kulhad chai culture to Phagwara, Punjab</strong> — one clay cup at a time.
           </p>
         </div>
       </section>
@@ -42,13 +50,13 @@ const About = () => {
               </h2>
               <div className="space-y-5 text-[#3D332D]/80 leading-relaxed">
                 <p>
-                  Thikana Café was born from a simple dream — to bring back the authentic taste and experience of traditional kulhad chai to the modern world. In a time where everything is disposable, we believe in the magic of clay cups that connect us to our roots.
+                  Thikana Café was born from a simple dream — to bring back the authentic taste of <strong className="font-medium">traditional kulhad chai</strong> to the modern world. In a time where everything is disposable, we believe in the magic of clay cups that connect us to our roots.
                 </p>
                 <p>
-                  Located in the heart of Phagwara, Punjab, our café is more than just a place for a quick drink. It's a <em className="font-serif text-[#B48256]">thikana</em> — a home away from home — where friends gather, stories unfold, and memories are brewed.
+                  Located in the heart of <strong className="font-medium">Phagwara, Punjab (144401)</strong>, our café is more than just a place for a quick drink. It's a <em className="font-serif text-[#B48256]">thikana</em> — a home away from home — where friends gather, stories unfold, and memories are brewed over steaming cups of <Link to="/menu" className="underline decoration-[#D4A373] underline-offset-4 hover:text-[#B48256]">masala chai and kulhad coffee</Link>.
                 </p>
                 <p>
-                  Every kulhad at our café is handmade by local potters, supporting artisans while reducing our environmental footprint. Every sip is an experience to remember.
+                  Every kulhad at our café is handmade by local potters, supporting artisans while reducing our environmental footprint. Every sip is an experience to remember — whether you're a student near LPU, a traveler in Phagwara, or a local chai lover.
                 </p>
               </div>
               <Link

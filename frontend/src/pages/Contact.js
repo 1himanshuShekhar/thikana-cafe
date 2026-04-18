@@ -1,6 +1,14 @@
 import { Phone, MapPin, Clock, MessageCircle, Mail, Send } from 'lucide-react';
+import useSEO from '@/hooks/useSEO';
 
 const Contact = () => {
+  useSEO({
+    title: 'Contact Thikana Café Phagwara | Address, Phone, WhatsApp Order',
+    description: 'Visit Thikana Café in Phagwara, Punjab 144401. Call +91 7320091985 or order on WhatsApp. Open 8 AM – 10 PM (Mon–Fri), 8 AM – 11 PM (Sat–Sun). Directions on Google Maps.',
+    keywords: 'Thikana Café contact, café Phagwara phone number, kulhad chai café address Phagwara, chai café WhatsApp order, café near me Phagwara 144401, café opening hours Phagwara',
+    canonical: 'https://thikanacafe.com/contact',
+  });
+
   const openingHours = [
     { day: 'Monday — Friday', hours: '8:00 AM – 10:00 PM' },
     { day: 'Saturday — Sunday', hours: '8:00 AM – 11:00 PM' },
@@ -23,7 +31,7 @@ const Contact = () => {
             Say <span className="italic text-[#B48256]">Hello</span>
           </h1>
           <p className="animate-fade-in-up animate-delay-200 text-lg text-[#8A796F] leading-relaxed max-w-2xl mx-auto">
-            Questions, reservations, or just want to say hi? We'd love to hear from you.
+            Questions, reservations, or just want to say hi? Visit our <strong className="font-medium text-[#3D332D]">kulhad chai café in Phagwara, Punjab</strong> or reach out — we're always happy to hear from fellow chai lovers.
           </p>
         </div>
       </section>

@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Coffee, Sparkles, UtensilsCrossed, ArrowRight } from 'lucide-react';
+import useSEO from '@/hooks/useSEO';
 
 const Menu = () => {
+  useSEO({
+    title: 'Menu — Kulhad Chai, Coffee & Snacks | Thikana Café Phagwara',
+    description: 'Explore our menu: Masala Chai ₹20, Ginger Chai ₹25, Kulhad Coffee ₹30, Cold Coffee ₹50, Punjabi Samosa, Paneer Pakora & more. Best chai café in Phagwara, Punjab.',
+    keywords: 'Thikana Café menu, kulhad chai menu Phagwara, masala chai price, kulhad coffee Phagwara, cold coffee café, Punjabi samosa Phagwara, café menu Punjab, chai prices Phagwara',
+    canonical: 'https://thikanacafe.com/menu',
+  });
+
   const [activeCategory, setActiveCategory] = useState('Chai');
 
   const menuData = {
@@ -48,7 +56,7 @@ const Menu = () => {
             Our <span className="italic text-[#B48256]">Menu</span>
           </h1>
           <p className="animate-fade-in-up animate-delay-200 text-lg text-[#8A796F] leading-relaxed max-w-2xl mx-auto">
-            A carefully curated selection of traditional beverages and freshly prepared snacks, made with love.
+            A carefully curated selection of <strong className="font-medium text-[#3D332D]">traditional kulhad chai, freshly brewed coffee, and Indian snacks</strong> at the best café in Phagwara, Punjab. Made with love, priced for everyone.
           </p>
         </div>
       </section>

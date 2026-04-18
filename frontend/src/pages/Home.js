@@ -1,7 +1,15 @@
 import { Coffee, Leaf, Users, Sparkles, Star, ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import useSEO from '@/hooks/useSEO';
 
 const Home = () => {
+  useSEO({
+    title: 'Thikana Café | Best Kulhad Chai Café in Phagwara, Punjab',
+    description: 'Thikana Café is the best kulhad chai café in Phagwara, Punjab. Enjoy authentic masala chai, kulhad coffee, cold coffee, and Indian snacks. Order on WhatsApp: 7320091985.',
+    keywords: 'kulhad chai café Phagwara, best café in Phagwara, Thikana Café, masala chai Phagwara, kulhad coffee, chai café near me, café Punjab 144401, desi chai, café near LPU, hangout café Phagwara',
+    canonical: 'https://thikanacafe.com/',
+  });
+
   const features = [
     { icon: Coffee, title: 'Freshly Brewed', description: 'Every cup made with passion and the finest ingredients, delivering unmatched flavor.' },
     { icon: Sparkles, title: 'Traditional Kulhad', description: 'Authentic handcrafted clay cups that enhance taste and connect you to heritage.' },
@@ -53,7 +61,7 @@ const Home = () => {
             style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}
             data-testid="hero-description"
           >
-            Step into a world where every sip tells a story. Authentic kulhad chai, freshly brewed coffee, and timeless moments — served in the heart of Phagwara.
+            The best <strong className="font-normal text-white">kulhad chai café in Phagwara, Punjab</strong>. Authentic masala chai, freshly brewed kulhad coffee, and traditional Indian snacks — served with warmth in the heart of Phagwara (144401).
           </p>
 
           <div className="animate-fade-in-up animate-delay-400 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -87,7 +95,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-sm tracking-[0.2em] uppercase text-[#B48256] font-medium mb-4 block">Why Choose Us</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#3D332D] mb-4">The Thikana Experience</h2>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#3D332D] mb-4">The Best Kulhad Chai Café in Phagwara</h2>
             <div className="accent-divider"></div>
           </div>
 
@@ -205,6 +213,37 @@ const Home = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LOCAL SEO CONTENT */}
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-[#FAF8F5]" data-testid="local-seo-section">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-sm tracking-[0.2em] uppercase text-[#B48256] font-medium mb-4 block">Visit Us in Phagwara</span>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#3D332D] mb-4">A Kulhad Chai Café in the Heart of Punjab</h2>
+            <div className="accent-divider"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-[#3D332D]/80 leading-relaxed">
+            <div>
+              <h3 className="font-serif text-2xl text-[#3D332D] mb-3">Authentic Kulhad Chai in Phagwara</h3>
+              <p className="mb-4">
+                Looking for the <strong>best kulhad chai café in Phagwara, Punjab</strong>? Thikana Café serves freshly brewed <Link to="/menu" className="text-[#B48256] underline decoration-[#D4A373] underline-offset-4 hover:text-[#8E5E3D]">masala chai, ginger chai, and elaichi chai</Link> in traditional clay cups — just like the good old days.
+              </p>
+              <p>
+                Every cup is made with hand-picked tea leaves, whole spices, and fresh milk. Our kulhads are eco-friendly, handmade by local potters, and keep your chai warm for longer.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-2xl text-[#3D332D] mb-3">Your Favourite Hangout Spot Near LPU</h3>
+              <p className="mb-4">
+                Whether you're a student, traveler, or local, our café in <strong>Phagwara (144401)</strong> is the perfect <Link to="/about" className="text-[#B48256] underline decoration-[#D4A373] underline-offset-4 hover:text-[#8E5E3D]">hangout thikana</Link> — affordable prices, cozy ambiance, and wholesome Punjabi vibes.
+              </p>
+              <p>
+                Pair your chai with <Link to="/menu" className="text-[#B48256] underline decoration-[#D4A373] underline-offset-4 hover:text-[#8E5E3D]">Punjabi samosa, paneer pakora, bun maska, or kulhad coffee</Link>. Need to order quickly? <a href="https://wa.me/917320091985" target="_blank" rel="noopener noreferrer" className="text-[#B48256] underline decoration-[#D4A373] underline-offset-4 hover:text-[#8E5E3D]">Message us on WhatsApp</a> — we'll have it ready.
+              </p>
+            </div>
           </div>
         </div>
       </section>
