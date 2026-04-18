@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Coffee, Sparkles, UtensilsCrossed, ArrowRight } from 'lucide-react';
-import useSEO from '@/hooks/useSEO';
+import useSEO from "../hooks/useSEO";
 
 const Menu = () => {
   useSEO({
