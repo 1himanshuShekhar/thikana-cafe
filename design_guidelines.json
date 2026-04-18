@@ -1,120 +1,139 @@
 {
   "theme": "LIGHT",
-  "archetype": "1 (Organic & Earthy)",
-  "brand": {
-    "name": "Thikana Café",
-    "tagline": "Desi Vibes, Kulhad Sips",
-    "description": "Authentic kulhad chai, freshly brewed coffee, and traditional snacks in a cozy, eco-friendly environment.",
-    "contact": {
-      "phone": "+91 73200 91985",
-      "whatsapp_url": "https://wa.me/917320091985",
-      "address": "Phagwara, Punjab 144401"
-    }
-  },
+  "archetype": "1",
+  "archetype_name": "Organic & Earthy",
+  "domain": "Cafe/Restaurant",
   "colors": {
-    "background": "#FDFBF7",
-    "surface": "#F5F5DC",
-    "primary": "#6F4E37",
-    "primary_hover": "#5A3E2B",
-    "accent": "#D97736",
-    "text_main": "#2C1E16",
-    "text_muted": "#5C4B41",
-    "border": "#E8E1D9"
+    "primary": "#B48256",
+    "primary_hover": "#8E5E3D",
+    "background": "#FAF8F5",
+    "surface": "#FFFFFF",
+    "text_main": "#3D332D",
+    "text_muted": "#8A796F",
+    "border": "#E8E1D9",
+    "dark_background": "#1F1916",
+    "dark_surface": "#2C241F",
+    "dark_text": "#FDFBF7",
+    "accent": "#D4A373"
   },
   "typography": {
-    "heading_font": "Cormorant Garamond",
-    "body_font": "Outfit",
-    "scale": {
-      "h1": "text-5xl sm:text-6xl tracking-tight leading-none",
-      "h2": "text-4xl sm:text-5xl tracking-tight",
-      "h3": "text-2xl sm:text-3xl",
-      "h4": "text-xl sm:text-2xl",
-      "body": "text-base leading-relaxed",
-      "small": "text-sm uppercase tracking-widest"
+    "headings": {
+      "font_family": "Playfair Display, serif",
+      "weights": ["400", "600", "700"],
+      "tracking": "tracking-tight"
+    },
+    "body": {
+      "font_family": "Outfit, sans-serif",
+      "weights": ["300", "400", "500", "600"]
     }
   },
-  "spacing_and_layout": {
-    "section_padding": "py-24 px-6 md:px-12 lg:px-24",
-    "container": "max-w-7xl mx-auto",
-    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-8",
-    "card_padding": "p-8 md:p-10",
+  "layout_spacing": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_gap": "py-20 md:py-32",
+    "item_gap": "gap-8 md:gap-12",
     "border_radius": "rounded-2xl"
   },
   "components": {
-    "navigation": "Sticky, glassmorphism (backdrop-blur-xl bg-[#FDFBF7]/80), border-b border-[#6F4E37]/10. Must contain logo, links (Home, Menu, About, Gallery, Contact), and CTA (WhatsApp button).",
-    "hero": "Full viewport height or min-h-[80vh]. Background image with bg-black/40 overlay to ensure text contrast. Text left-aligned or centered, large H1, tagline above H1, CTA button.",
-    "buttons": "Primary CTA: bg-[#6F4E37] text-white rounded-full px-8 py-4 font-medium hover:bg-[#5A3E2B] transition-colors. Secondary/WhatsApp: bg-[#25D366] text-white rounded-full px-8 py-4 font-medium hover:bg-[#1EBE5D] flex items-center gap-2.",
-    "cards": "bg-[#F5F5DC] rounded-2xl p-8 border border-[#6F4E37]/10 hover:shadow-lg transition-all duration-300",
-    "floating_whatsapp": "Fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform"
-  },
-  "pages_and_sections": {
-    "Home": {
-      "Hero": "Hero with background image, H1, description, CTA.",
-      "Features": "4-column grid (Freshly brewed chai, Traditional kulhad, Eco-friendly, Hangout spot). Icons in #D97736.",
-      "MenuPreview": "3-4 cards highlighting bestsellers. 'View Full Menu' button.",
-      "Testimonials": "Clean soft cards with organic earthy quotes."
+    "hero": {
+      "style": "full_width_background",
+      "overlay": "bg-[#1F1916]/70",
+      "text_color": "text-[#FDFBF7]",
+      "alignment": "text-center",
+      "title_size": "text-5xl md:text-7xl lg:text-8xl",
+      "subtitle_size": "text-xl md:text-2xl font-light",
+      "animation": "framer-motion fade-in up",
+      "instructions_to_main_agent": "Ensure the background image covers the entire viewport, and the dark overlay has enough opacity for the heading to be perfectly legible. DO NOT USE Inter. Use Playfair Display for headings."
     },
-    "Menu": {
-      "Categories": "Tabs or scroll spy for 'Chai Varieties', 'Coffee', 'Snacks'. List layout with dotted leader connecting item name and price."
+    "navbar": {
+      "style": "sticky_glass",
+      "background": "bg-[#FAF8F5]/90 backdrop-blur-md",
+      "border": "border-b border-[#E8E1D9]",
+      "text_color": "text-[#3D332D]",
+      "instructions_to_main_agent": "Make the navbar sticky to the top. Smooth scroll navigation for anchor links if on the same page, otherwise standard routing."
     },
-    "About": {
-      "Story": "Split layout. Text on left about the 'kulhad culture', image on right."
+    "menu_cards": {
+      "background": "bg-[#FFFFFF]",
+      "border": "border border-[#E8E1D9]",
+      "shadow": "shadow-sm hover:shadow-xl",
+      "hover_effect": "hover:-translate-y-2 transition-all duration-300",
+      "border_radius": "rounded-2xl",
+      "padding": "p-6",
+      "instructions_to_main_agent": "Use Shadcn Card component for Menu items. Customize it to have rounded-2xl and a subtle hover effect."
     },
-    "Gallery": {
-      "Layout": "Asymmetric bento grid of cafe ambiance and food."
+    "buttons": {
+      "primary": "bg-[#B48256] hover:bg-[#8E5E3D] text-white rounded-full px-8 py-3 transition-colors",
+      "secondary": "border-2 border-[#B48256] text-[#B48256] hover:bg-[#B48256] hover:text-white rounded-full px-8 py-3 transition-colors"
     },
-    "Contact": {
-      "Layout": "Split layout. Left: Contact info, Opening Hours, WhatsApp CTA. Right: Generic Google Maps embed iframe."
+    "testimonials": {
+      "style": "carousel_or_grid",
+      "card_bg": "bg-[#FFFFFF]",
+      "shadow": "shadow-md",
+      "animation": "subtle_scale_on_hover",
+      "instructions_to_main_agent": "Use a staggered entry animation for the cards. Make sure to display 3 cards in a grid on large screens."
+    },
+    "floating_whatsapp": {
+      "position": "fixed bottom-6 right-6 z-50",
+      "style": "bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-xl hover:scale-110 transition-transform flex items-center justify-center",
+      "instructions_to_main_agent": "Implement a fixed floating button that stays at the bottom right. Use the MessageCircle icon or similar from lucide-react."
     }
   },
-  "motion": {
-    "scroll": "Smooth scrolling via CSS scroll-behavior: smooth.",
-    "hover": "Subtle translate-y-1 and shadow-lg on cards. Scale on floating buttons."
+  "media": {
+    "hero_bg": "https://images.unsplash.com/photo-1612846213933-916a1f56d859?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB0ZWF8ZW58MHx8fHwxNzc2NDk1NDg1fDA&ixlib=rb-4.1.0&q=85",
+    "gallery_images": [
+      "https://images.pexels.com/photos/5814950/pexels-photo-5814950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/15945660/pexels-photo-15945660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/192933/pexels-photo-192933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1562235681-74f0c27da49f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwyfHxiYXJpc3RhJTIwcG91cmluZ3xlbnwwfHx8fDE3NzY0OTU0ODF8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1606486544554-164d98da4889?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwyfHxjb2ZmZWUlMjBiZWFuc3xlbnwwfHx8fDE3NzY0OTU0ODV8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/6205462/pexels-photo-6205462.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ],
+    "about_image": "https://images.pexels.com/photos/36522640/pexels-photo-36522640.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
   },
-  "icons": {
-    "library": "lucide-react",
-    "style": "Stroke width 1.5, matching text_main or primary colors."
-  },
-  "media_urls": {
-    "hero_bg": {
-      "url": "https://images.unsplash.com/photo-1619581073186-5b4ae1b0caad?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxjbGF5JTIwY3VwJTIwaG90JTIwdGVhJTIwbWFzYWxhJTIwY2hhaXxlbnwwfHx8fDE3NzY0OTQ3MTd8MA&ixlib=rb-4.1.0&q=85",
-      "description": "Brown clay pots / kulhad chai on wooden table. Use as hero background with black/40 overlay."
+  "icons_library": "lucide-react",
+  "pages_structure": [
+    {
+      "name": "Home",
+      "sections": [
+        "Hero (Full width, dark overlay)",
+        "Features (Icons, 3-column grid)",
+        "Featured Menu Preview (Cards)",
+        "Testimonials (Enhanced with animations)",
+        "Location/Hours"
+      ]
     },
-    "about_image": {
-      "url": "https://images.unsplash.com/photo-1630748662359-40a2105640c7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwzfHxjbGF5JTIwY3VwJTIwaG90JTIwdGVhJTIwbWFzYWxhJTIwY2hhaXxlbnwwfHx8fDE3NzY0OTQ3MTd8MA&ixlib=rb-4.1.0&q=85",
-      "description": "Close up of kulhad cup. Perfect for about page."
+    {
+      "name": "Menu",
+      "sections": [
+        "Menu Header (Warm background)",
+        "Categories (Tabs or Sections: Hot Drinks, Cold Drinks, Snacks, Desserts)",
+        "Menu Grid (Cards with hover effects)"
+      ]
     },
-    "gallery_1": {
-      "url": "https://images.unsplash.com/photo-1774683272173-4f72fd508739?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwzfHxjb3p5JTIwY2FmZSUyMGludGVyaW9yJTIwd2FybSUyMGxpZ2h0fGVufDB8fHx8MTc3NjQ5NDcxN3ww&ixlib=rb-4.1.0&q=85",
-      "description": "Warm sunlight modern cafe interior."
+    {
+      "name": "About",
+      "sections": [
+        "Our Story (Split layout: Text + Image)",
+        "Values (Grid with icons)",
+        "Team/Baristas"
+      ]
     },
-    "gallery_2": {
-      "url": "https://images.unsplash.com/photo-1749996089724-268703b8c4dc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwxfHxjb3p5JTIwY2FmZSUyMGludGVyaW9yJTIwd2FybSUyMGxpZ2h0fGVufDB8fHx8MTc3NjQ5NDcxN3ww&ixlib=rb-4.1.0&q=85",
-      "description": "Cozy cafe with baked goods."
+    {
+      "name": "Gallery",
+      "sections": [
+        "Masonry Grid of Cafe Images (Use framer-motion for staggered reveal)"
+      ]
     },
-    "gallery_3": {
-      "url": "https://images.unsplash.com/photo-1601050690294-397f3c324515?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBjYWZlJTIwZm9vZCUyMHNuYWNrcyUyMHNhbW9zYXxlbnwwfHx8fDE3NzY0OTQ3MTd8MA&ixlib=rb-4.1.0&q=85",
-      "description": "Indian cafe food/snacks on wooden board."
+    {
+      "name": "Contact",
+      "sections": [
+        "Contact Info (Phone, Email, Address)",
+        "Google Maps (Embed map for Phagwara generic location)",
+        "Contact Form (Use Shadcn form components)"
+      ]
     }
-  },
-  "menu_data": {
-    "Chai": [
-      { "name": "Masala Chai", "price": "₹20" },
-      { "name": "Ginger Chai", "price": "₹25" },
-      { "name": "Elaichi Chai", "price": "₹25" },
-      { "name": "Special Kulhad Chai", "price": "₹30" }
-    ],
-    "Coffee": [
-      { "name": "Kulhad Coffee", "price": "₹30" },
-      { "name": "Cold Coffee", "price": "₹50" },
-      { "name": "Hazelnut Cold Coffee", "price": "₹70" }
-    ],
-    "Snacks": [
-      { "name": "Punjabi Samosa", "price": "₹20" },
-      { "name": "Bun Maska", "price": "₹30" },
-      { "name": "Paneer Pakora", "price": "₹40" },
-      { "name": "French Fries", "price": "₹60" }
-    ]
-  },
-  "instructions_to_main_agent": "Ensure the website is entirely static frontend built with React Router (Home, Menu, About, Gallery, Contact pages). Use Tailwind CSS for all styling. Do NOT use Shadcn Card components for creative sections, use raw HTML and Tailwind. Use 'Cormorant Garamond' for headings and 'Outfit' for body text. Add 'data-testid' to all buttons, links, and form inputs. Use the exact text/data provided. Ensure contrast on text placed over images using drop-shadow or text-shadow or bg-black/40 overlay. The site must be responsive and visually appealing matching an organic warm earthy theme."
+  ],
+  "accessibility_and_testing": {
+    "contrast_check": "Ensure #FFFFFF text over #1F1916 background meets AAA standards. Use adequate text shadows on hero overlay if needed.",
+    "data_testid_rule": "ALL interactive and key informational elements MUST include a data-testid attribute in kebab-case."
+  }
 }
