@@ -1,6 +1,6 @@
 import { Heart, Award, Users, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import useSEO from '@/hooks/useSEO';
+import useSEO from "../hooks/useSEO";
 
 const About = () => {
   useSEO({
