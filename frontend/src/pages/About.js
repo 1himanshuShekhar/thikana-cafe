@@ -1,80 +1,119 @@
-import { Heart, Award, Users, Clock } from 'lucide-react';
+import { Heart, Award, Users, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const values = [
-    {
-      icon: Heart,
-      title: 'Passion',
-      description: 'We pour love into every cup we serve',
-    },
-    {
-      icon: Award,
-      title: 'Quality',
-      description: 'Only the finest ingredients make it to your cup',
-    },
-    {
-      icon: Users,
-      title: 'Community',
-      description: 'Building connections one chai at a time',
-    },
-    {
-      icon: Clock,
-      title: 'Tradition',
-      description: 'Keeping the kulhad culture alive',
-    },
+    { icon: Heart, title: 'Passion', description: 'We pour love into every cup we serve' },
+    { icon: Award, title: 'Quality', description: 'Only the finest ingredients make it to your cup' },
+    { icon: Users, title: 'Community', description: 'Building connections one chai at a time' },
+    { icon: Clock, title: 'Tradition', description: 'Keeping the kulhad culture alive' },
+  ];
+
+  const stats = [
+    { value: '500+', label: 'Happy Customers Daily' },
+    { value: '50+', label: 'Menu Varieties' },
+    { value: '100%', label: 'Fresh Ingredients' },
+    { value: '5★', label: 'Customer Rating' },
   ];
 
   return (
-    <div className="min-h-screen">
-      <section className="py-24 px-6 md:px-12 lg:px-24">
+    <div className="min-h-screen bg-[#FAF8F5]">
+      {/* HERO */}
+      <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-white to-[#FAF8F5]">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-sm tracking-[0.2em] uppercase text-[#B48256] font-medium mb-4 block animate-fade-in-up">About Us</span>
+          <h1 className="animate-fade-in-up animate-delay-100 font-serif text-5xl md:text-6xl lg:text-7xl text-[#3D332D] mb-6" data-testid="about-page-title">
+            Our <span className="italic text-[#B48256]">Story</span>
+          </h1>
+          <p className="animate-fade-in-up animate-delay-200 text-lg text-[#8A796F] leading-relaxed max-w-2xl mx-auto">
+            Born from a dream to bring back the authentic taste of tradition — one kulhad at a time.
+          </p>
+        </div>
+      </section>
+
+      {/* STORY SECTION */}
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
-              <h1 className="text-5xl sm:text-6xl tracking-tight leading-none text-[#6F4E37] mb-6" data-testid="about-page-title">
-                Our Story
-              </h1>
-              <div className="space-y-6 text-base leading-relaxed text-[#5C4B41]">
+              <span className="text-sm tracking-[0.2em] uppercase text-[#B48256] font-medium mb-4 block">The Journey</span>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#3D332D] mb-8 leading-tight">
+                A Thikana for Every <span className="italic text-[#B48256]">Chai Lover</span>
+              </h2>
+              <div className="space-y-5 text-[#3D332D]/80 leading-relaxed">
                 <p>
-                  Thikana Café was born from a simple dream - to bring back the authentic taste and experience of traditional kulhad chai to the modern world. In a time where everything is served in disposable cups, we believe in the magic of clay cups that not only enhance the flavor but also connect us to our roots.
+                  Thikana Café was born from a simple dream — to bring back the authentic taste and experience of traditional kulhad chai to the modern world. In a time where everything is disposable, we believe in the magic of clay cups that connect us to our roots.
                 </p>
                 <p>
-                  Located in the heart of Phagwara, Punjab, our café is more than just a place to grab a quick drink. It's a thikana - a home away from home - where friends gather, stories are shared, and memories are made over steaming cups of chai and coffee.
+                  Located in the heart of Phagwara, Punjab, our café is more than just a place for a quick drink. It's a <em className="font-serif text-[#B48256]">thikana</em> — a home away from home — where friends gather, stories unfold, and memories are brewed.
                 </p>
                 <p>
-                  Every kulhad used at our café tells a story of tradition, craftsmanship, and sustainability. We work with local potters to ensure that each cup is handmade with care, supporting local artisans while reducing our environmental footprint.
-                </p>
-                <p>
-                  Our menu celebrates the rich flavors of Punjab - from the robust masala chai that awakens your senses to the smooth kulhad coffee that soothes your soul. Every item is prepared fresh with premium ingredients, ensuring that every sip is an experience to remember.
+                  Every kulhad at our café is handmade by local potters, supporting artisans while reducing our environmental footprint. Every sip is an experience to remember.
                 </p>
               </div>
+              <Link
+                to="/menu"
+                data-testid="about-explore-menu"
+                className="inline-flex items-center gap-2 mt-8 text-[#B48256] font-medium hover:text-[#8E5E3D] transition-colors"
+              >
+                Explore Our Menu
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
             <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1630748662359-40a2105640c7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwzfHxjbGF5JTIwY3VwJTIwaG90JTIwdGVhJTIwbWFzYWxhJTIwY2hhaXxlbnwwfHx8fDE3NzY0OTQ3MTd8MA&ixlib=rb-4.1.0&q=85"
-                alt="Kulhad chai close-up"
-                className="rounded-2xl shadow-2xl w-full h-auto"
-                data-testid="about-image"
-              />
+              <div className="image-zoom rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.pexels.com/photos/36522640/pexels-photo-36522640.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  alt="Kulhad chai close-up"
+                  className="w-full h-[500px] md:h-[600px] object-cover"
+                  data-testid="about-image"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-[#E8E1D9] hidden md:block">
+                <p className="font-serif text-3xl text-[#B48256] mb-1">Since 2023</p>
+                <p className="text-sm text-[#8A796F]">Serving with love</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#F5F5DC]" data-testid="values-section">
+      {/* STATS */}
+      <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20 bg-[#1F1916] text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl tracking-tight text-center text-[#6F4E37] mb-16">Our Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center" data-testid={`stat-${index}`}>
+                <p className="font-serif text-4xl md:text-5xl text-[#D4A373] mb-2">{stat.value}</p>
+                <p className="text-sm text-[#A89B91] tracking-wide">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VALUES */}
+      <section className="py-20 md:py-32 px-6 md:px-12 lg:px-20 bg-white" data-testid="values-section">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-sm tracking-[0.2em] uppercase text-[#B48256] font-medium mb-4 block">What We Stand For</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#3D332D] mb-4">Our Values</h2>
+            <div className="accent-divider"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <div
                   key={index}
                   data-testid={`value-card-${index}`}
-                  className="bg-[#FDFBF7] rounded-2xl p-8 border border-[#6F4E37]/10 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  className="premium-card bg-[#FAF8F5] rounded-2xl p-8 border border-[#E8E1D9] text-center"
                 >
-                  <Icon className="w-12 h-12 text-[#D97736] mx-auto mb-4" />
-                  <h3 className="text-xl sm:text-2xl text-[#6F4E37] mb-3">{value.title}</h3>
-                  <p className="text-base leading-relaxed text-[#5C4B41]">{value.description}</p>
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#D4A373] to-[#B48256] flex items-center justify-center mx-auto mb-5">
+                    <Icon className="w-6 h-6 text-white" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-serif text-xl text-[#3D332D] mb-3">{value.title}</h3>
+                  <p className="text-sm text-[#8A796F] leading-relaxed">{value.description}</p>
                 </div>
               );
             })}
@@ -82,18 +121,20 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 lg:px-24">
+      {/* KULHAD CULTURE */}
+      <section className="py-20 md:py-32 px-6 md:px-12 lg:px-20 bg-[#FAF8F5]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl tracking-tight text-[#6F4E37] mb-6">The Kulhad Culture</h2>
-          <div className="text-base leading-relaxed text-[#5C4B41] space-y-4">
+          <span className="text-sm tracking-[0.2em] uppercase text-[#B48256] font-medium mb-4 block">Heritage</span>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#3D332D] mb-8">The <span className="italic text-[#B48256]">Kulhad</span> Culture</h2>
+          <div className="space-y-5 text-[#3D332D]/80 leading-relaxed text-lg">
             <p>
-              The kulhad, a traditional clay cup, has been an integral part of Indian tea culture for centuries. Made from natural clay, these cups are biodegradable and eco-friendly, making them the perfect sustainable choice for serving beverages.
+              The kulhad, a traditional clay cup, has been integral to Indian tea culture for centuries. Made from natural clay, these cups are biodegradable and eco-friendly — the perfect sustainable choice for serving beverages.
             </p>
             <p>
-              But kulhads are more than just eco-friendly containers. The porous nature of clay enhances the flavor of chai and coffee, giving them a unique earthy taste that you simply can't get from regular cups. The clay also keeps the beverage warm for longer, allowing you to savor every sip.
+              But kulhads are more than containers. Clay's porous nature enhances the flavor of chai and coffee, giving them a unique earthy taste. It also keeps beverages warmer longer, letting you savor every sip.
             </p>
-            <p>
-              At Thikana Café, we're proud to keep this beautiful tradition alive, one kulhad at a time.
+            <p className="font-serif italic text-[#B48256] text-xl md:text-2xl pt-4">
+              At Thikana Café, we keep this beautiful tradition alive — one kulhad at a time.
             </p>
           </div>
         </div>

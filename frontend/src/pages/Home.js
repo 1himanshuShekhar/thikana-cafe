@@ -1,98 +1,110 @@
-import { Coffee, Leaf, Users, Sparkles } from 'lucide-react';
+import { Coffee, Leaf, Users, Sparkles, Star, ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   const features = [
-    {
-      icon: Coffee,
-      title: 'Freshly Brewed',
-      description: 'Every cup made fresh with premium ingredients',
-    },
-    {
-      icon: Sparkles,
-      title: 'Traditional Kulhad',
-      description: 'Authentic clay cups for genuine desi experience',
-    },
-    {
-      icon: Leaf,
-      title: 'Eco-Friendly',
-      description: 'Sustainable and environment-conscious serving',
-    },
-    {
-      icon: Users,
-      title: 'Hangout Spot',
-      description: 'Perfect place to relax with friends',
-    },
+    { icon: Coffee, title: 'Freshly Brewed', description: 'Every cup made with passion and the finest ingredients, delivering unmatched flavor.' },
+    { icon: Sparkles, title: 'Traditional Kulhad', description: 'Authentic handcrafted clay cups that enhance taste and connect you to heritage.' },
+    { icon: Leaf, title: 'Eco-Friendly', description: 'Sustainable, biodegradable serving that honors our planet with every sip.' },
+    { icon: Users, title: 'Cozy Hangout', description: 'A warm, inviting space perfect for catching up with friends and creating memories.' },
   ];
 
   const menuPreview = [
-    { name: 'Masala Chai', price: '₹20', description: 'Spiced tea with aromatic flavors' },
-    { name: 'Kulhad Coffee', price: '₹30', description: 'Rich coffee in traditional clay cup' },
-    { name: 'Cold Coffee', price: '₹50', description: 'Chilled coffee perfection' },
+    { name: 'Masala Chai', price: '20', description: 'Aromatic spiced tea brewed with love', image: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80' },
+    { name: 'Kulhad Coffee', price: '30', description: 'Rich coffee in traditional clay cup', image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80' },
+    { name: 'Cold Coffee', price: '50', description: 'Creamy, chilled and refreshing', image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80' },
   ];
 
   const testimonials = [
-    {
-      name: 'Rajesh Kumar',
-      text: 'Best chai in Phagwara! The kulhad adds such an authentic touch.',
-    },
-    {
-      name: 'Priya Singh',
-      text: 'Love the cozy ambiance and the cold coffee is amazing!',
-    },
-    {
-      name: 'Amit Sharma',
-      text: 'Perfect spot to hang out with friends. Highly recommend the masala chai.',
-    },
+    { name: 'Rajesh Kumar', role: 'Regular Customer', text: 'Absolutely the best chai in Phagwara. The kulhad adds such an authentic touch that takes me back to my childhood.', rating: 5 },
+    { name: 'Priya Singh', role: 'Food Blogger', text: 'The ambiance is cozy, the staff is welcoming, and the cold coffee is simply divine. A hidden gem!', rating: 5 },
+    { name: 'Amit Sharma', role: 'College Student', text: 'My go-to hangout spot. The masala chai is perfect and the prices are super student-friendly.', rating: 5 },
   ];
 
   return (
     <div>
+      {/* HERO */}
       <section
-        className="relative min-h-[85vh] flex items-center justify-center bg-cover bg-center"
+        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1619581073186-5b4ae1b0caad?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxjbGF5JTIwY3VwJTIwaG90JTIwdGVhJTIwbWFzYWxhJTIwY2hhaXxlbnwwfHx8fDE3NzY0OTQ3MTd8MA&ixlib=rb-4.1.0&q=85')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1612846213933-916a1f56d859?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB0ZWF8ZW58MHx8fHwxNzc2NDk1NDg1fDA&ixlib=rb-4.1.0&q=85')`,
         }}
         data-testid="hero-section"
       >
         <div className="hero-overlay absolute inset-0"></div>
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <p className="text-sm uppercase tracking-widest text-[#D97736] mb-4 font-medium" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-            Desi Vibes, Kulhad Sips
-          </p>
-          <h1 className="text-5xl sm:text-6xl tracking-tight leading-none text-white font-bold mb-6" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8)' }} data-testid="hero-title">
-            Thikana Café
-          </h1>
-          <p className="text-base sm:text-lg leading-relaxed text-white mb-8 max-w-2xl mx-auto" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.7)' }} data-testid="hero-description">
-            Experience the authentic taste of kulhad chai and freshly brewed coffee in a warm, traditional setting. Every sip tells a story of culture and comfort.
-          </p>
-          <a
-            href="https://wa.me/917320091985"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="hero-cta-button"
-            className="inline-block bg-[#25D366] text-white rounded-full px-8 py-4 font-medium hover:bg-[#1EBE5D] transition-colors"
+        <div className="relative z-10 text-center px-6 max-w-5xl">
+          <div className="animate-fade-in-up animate-delay-100">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
+              <span className="w-2 h-2 rounded-full bg-[#D4A373]"></span>
+              <span className="text-sm text-white/90 tracking-widest uppercase font-medium">Desi Vibes, Kulhad Sips</span>
+            </div>
+          </div>
+
+          <h1
+            className="animate-fade-in-up animate-delay-200 font-serif text-6xl sm:text-7xl lg:text-8xl font-semibold text-white leading-none mb-8"
+            style={{ textShadow: '0 4px 30px rgba(0,0,0,0.4)' }}
+            data-testid="hero-title"
           >
-            Order Now on WhatsApp
-          </a>
+            Thikana <span className="italic text-[#D4A373]">Café</span>
+          </h1>
+
+          <p
+            className="animate-fade-in-up animate-delay-300 text-lg md:text-xl text-white/90 leading-relaxed mb-10 max-w-2xl mx-auto font-light"
+            style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}
+            data-testid="hero-description"
+          >
+            Step into a world where every sip tells a story. Authentic kulhad chai, freshly brewed coffee, and timeless moments — served in the heart of Phagwara.
+          </p>
+
+          <div className="animate-fade-in-up animate-delay-400 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="https://wa.me/917320091985"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="hero-cta-button"
+              className="group inline-flex items-center gap-2 bg-[#B48256] hover:bg-[#8E5E3D] text-white rounded-full px-8 py-4 font-medium btn-lift"
+            >
+              Order Now on WhatsApp
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <Link
+              to="/menu"
+              data-testid="hero-menu-link"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full px-8 py-4 font-medium hover:bg-white/20 transition-colors"
+            >
+              Explore Menu
+            </Link>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 text-xs tracking-widest uppercase animate-fade-in animate-delay-500">
+          Scroll to discover
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 lg:px-24" data-testid="features-section">
+      {/* FEATURES */}
+      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-[#FAF8F5]" data-testid="features-section">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl tracking-tight text-center text-[#6F4E37] mb-16">Why Choose Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-center mb-16">
+            <span className="text-sm tracking-[0.2em] uppercase text-[#B48256] font-medium mb-4 block">Why Choose Us</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#3D332D] mb-4">The Thikana Experience</h2>
+            <div className="accent-divider"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={index}
                   data-testid={`feature-card-${index}`}
-                  className="bg-[#F5F5DC] rounded-2xl p-8 border border-[#6F4E37]/10 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  className="premium-card bg-white rounded-2xl p-8 border border-[#E8E1D9]"
                 >
-                  <Icon className="w-12 h-12 text-[#D97736] mb-4" />
-                  <h3 className="text-xl sm:text-2xl text-[#6F4E37] mb-3">{feature.title}</h3>
-                  <p className="text-base leading-relaxed text-[#5C4B41]">{feature.description}</p>
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#D4A373] to-[#B48256] flex items-center justify-center mb-5">
+                    <Icon className="w-6 h-6 text-white" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-serif text-xl text-[#3D332D] mb-3">{feature.title}</h3>
+                  <p className="text-sm text-[#8A796F] leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -100,68 +112,126 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#F5F5DC]" data-testid="menu-preview-section">
+      {/* MENU PREVIEW */}
+      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-white" data-testid="menu-preview-section">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl tracking-tight text-center text-[#6F4E37] mb-4">Our Popular Menu</h2>
-          <p className="text-center text-[#5C4B41] mb-12">Taste the tradition in every sip</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+            <div>
+              <span className="text-sm tracking-[0.2em] uppercase text-[#B48256] font-medium mb-4 block">Our Bestsellers</span>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#3D332D]">Taste the Tradition</h2>
+            </div>
+            <Link
+              to="/menu"
+              data-testid="view-full-menu-button"
+              className="group inline-flex items-center gap-2 text-[#B48256] font-medium hover:text-[#8E5E3D] transition-colors"
+            >
+              View Full Menu
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {menuPreview.map((item, index) => (
               <div
                 key={index}
                 data-testid={`menu-preview-card-${index}`}
-                className="bg-[#FDFBF7] rounded-2xl p-8 border border-[#6F4E37]/10 hover:shadow-lg transition-all duration-300"
+                className="premium-card group bg-[#FAF8F5] rounded-2xl overflow-hidden border border-[#E8E1D9]"
               >
-                <h3 className="text-2xl sm:text-3xl text-[#6F4E37] mb-2">{item.name}</h3>
-                <p className="text-xl text-[#D97736] font-semibold mb-3">{item.price}</p>
-                <p className="text-base leading-relaxed text-[#5C4B41]">{item.description}</p>
+                <div className="image-zoom aspect-[4/3] overflow-hidden">
+                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="font-serif text-2xl text-[#3D332D]">{item.name}</h3>
+                    <span className="font-serif text-xl font-semibold text-[#B48256]">₹{item.price}</span>
+                  </div>
+                  <p className="text-sm text-[#8A796F] leading-relaxed">{item.description}</p>
+                </div>
               </div>
             ))}
-          </div>
-          <div className="text-center">
-            <Link
-              to="/menu"
-              data-testid="view-full-menu-button"
-              className="inline-block bg-[#6F4E37] text-white rounded-full px-8 py-4 font-medium hover:bg-[#5A3E2B] transition-colors"
-            >
-              View Full Menu
-            </Link>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 lg:px-24" data-testid="testimonials-section">
+      {/* ABOUT PREVIEW STRIP */}
+      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-[#1F1916] text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1606486544554-164d98da4889?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwyfHxjb2ZmZWUlMjBiZWFuc3xlbnwwfHx8fDE3NzY0OTU0ODV8MA&ixlib=rb-4.1.0&q=85')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}></div>
+        <div className="relative max-w-4xl mx-auto text-center">
+          <Quote className="w-12 h-12 text-[#D4A373] mx-auto mb-6" strokeWidth={1} />
+          <p className="font-serif text-2xl md:text-4xl italic leading-relaxed mb-8 text-[#FDFBF7]">
+            "A thikana is not just a place — it's a feeling of belonging, a corner of warmth where friends become family over cups of chai."
+          </p>
+          <Link
+            to="/about"
+            data-testid="about-link-home"
+            className="inline-flex items-center gap-2 border-2 border-[#D4A373] text-[#D4A373] rounded-full px-8 py-3 font-medium hover:bg-[#D4A373] hover:text-[#1F1916] transition-colors"
+          >
+            Discover Our Story
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-[#FAF8F5]" data-testid="testimonials-section">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl tracking-tight text-center text-[#6F4E37] mb-16">What Our Customers Say</h2>
+          <div className="text-center mb-16">
+            <span className="text-sm tracking-[0.2em] uppercase text-[#B48256] font-medium mb-4 block">Testimonials</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#3D332D] mb-4">Loved by Our Guests</h2>
+            <div className="accent-divider"></div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
                 data-testid={`testimonial-card-${index}`}
-                className="bg-[#F5F5DC] rounded-2xl p-8 border border-[#6F4E37]/10"
+                className="premium-card bg-white rounded-2xl p-8 border border-[#E8E1D9] relative"
               >
-                <p className="text-base leading-relaxed text-[#5C4B41] mb-4 italic">"{testimonial.text}"</p>
-                <p className="text-[#6F4E37] font-semibold">- {testimonial.name}</p>
+                <Quote className="w-8 h-8 text-[#D4A373]/40 absolute top-6 right-6" strokeWidth={1} />
+                <div className="flex gap-1 mb-5">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#D4A373] text-[#D4A373]" />
+                  ))}
+                </div>
+                <p className="text-[#3D332D] leading-relaxed mb-6 italic">"{testimonial.text}"</p>
+                <div className="pt-5 border-t border-[#E8E1D9]">
+                  <p className="font-serif text-lg text-[#3D332D]">{testimonial.name}</p>
+                  <p className="text-sm text-[#8A796F]">{testimonial.role}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#6F4E37] text-white" data-testid="cta-section">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl tracking-tight mb-6">Visit Us Today</h2>
-          <p className="text-base sm:text-lg leading-relaxed mb-8">
-            Experience the perfect blend of tradition and taste at Thikana Café. Your favorite chai awaits!
-          </p>
-          <a
-            href="https://wa.me/917320091985"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="cta-whatsapp-button"
-            className="inline-block bg-[#25D366] text-white rounded-full px-8 py-4 font-medium hover:bg-[#1EBE5D] transition-colors"
-          >
-            Order on WhatsApp
-          </a>
+      {/* FINAL CTA */}
+      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20 bg-white" data-testid="cta-section">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#B48256] to-[#8E5E3D] p-12 md:p-20 text-center text-white">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+            <div className="relative">
+              <h2 className="font-serif text-4xl md:text-5xl mb-5">Ready for a Sip of Tradition?</h2>
+              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto font-light">
+                Your favorite chai is just one message away. Order now or visit us in Phagwara.
+              </p>
+              <a
+                href="https://wa.me/917320091985"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="cta-whatsapp-button"
+                className="inline-flex items-center gap-2 bg-white text-[#B48256] rounded-full px-8 py-4 font-semibold btn-lift hover:bg-[#FAF8F5]"
+              >
+                Order on WhatsApp
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
