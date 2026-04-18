@@ -1,13 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "@/App.css";
-import Home from "@/pages/Home";
-import Menu from "@/pages/Menu";
-import About from "@/pages/About";
-import Gallery from "@/pages/Gallery";
-import Contact from "@/pages/Contact";
-import Navigation from "@/components/Navigation";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import Footer from "@/components/Footer";
+import "./App.css";
+
+import Home from "./pages/Home";
+import Menu from "./pages/Menu";
+import About from "./pages/About";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
+
+import Navigation from "./components/Navigation";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
